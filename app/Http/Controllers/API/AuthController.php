@@ -25,7 +25,7 @@ class AuthController extends Controller
         ]);
 
         //Create a token for the user
-        $accessToken = $user->createToken('secret')->plainTextToken;
+$accessToken = $user->createToken('secret')->plainTextToken;
         return response([
             'user'=>$user,
             'accessToken'=>$accessToken,
@@ -45,6 +45,7 @@ class AuthController extends Controller
         $token = auth()->user()->createToken('secret')->plainTextToken;
         return response([
             'user'=>auth()->user(),
+            'token'=>$token,
             'message'=>'Loggin successfully'
         ],200);
 
